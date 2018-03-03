@@ -9,6 +9,10 @@
 
 <body>
   <h1 class='title'>SELAMAT BERINTERAKSI DI CHAT APP INI!</h1>
+
+  USERNAME <input type="text" class="accountUser"></div>
+  <!-- <div class="accountUser">NEIL</div> -->
+
   <div class='firstchatbox'>
     <div class='editTextChat'>
       <h5></h5>
@@ -24,13 +28,14 @@
 
   <script>
     $("#btnSend").on('click', function () {
-      TextAreaEmpty();
       AddToInputAtas();
+      TextAreaEmpty();
     });
 
     function AddToInputAtas() {
       var txtArea = $('#txtAreaInput').val();
-      $('h5').append("Anonymous<br>" + txtArea);
+      var user = $('.accountUser').val();
+      $('h5').append("<div class ='txtInput'>" + user + "<br><div class='txtOutput'>" + txtArea + "</div><br>");
     }
 
     function TextAreaEmpty(){

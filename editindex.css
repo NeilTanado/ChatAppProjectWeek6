@@ -9,8 +9,8 @@
 .firstchatbox{
   padding: 10px;
   margin: auto;
-  width: 700px;
-  height: 550px;
+  width: 600px;
+  height: 500px;
   border-style: solid;
   margin-bottom: 20px
 }
@@ -30,4 +30,14 @@
 .editTextChat{
   width: 100%;
   margin:10px;
+}
+
+.txtOutput {
+  color: blue;
+  font-size: 15px;
+}
+
+.txtInput{
+  color: black;
+  font-size: 25px;
 }
