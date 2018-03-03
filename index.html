@@ -12,61 +12,26 @@
     </div>
   </div>
   <div class="chatbox">
-    <textarea id = 007 class='title' rows="8" cols="65">
+    <textarea id = "txt" class='title' rows="8" cols="65">
     </textarea>
   </div>
   <div class="title">
-    <button class='button'>Send</button>
+    <button id="btnSend" class='button'>Send</button>
   </div>
 
   <link rel="stylesheet" type="text/css" href="editindex.css">
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBvn1_eguNTKJISe09_VbxLstojLSRkxqU",
-      authDomain: "chatapp-be540.firebaseapp.com",
-      databaseURL: "https://chatapp-be540.firebaseio.com",
-      projectId: "chatapp-be540",
-      storageBucket: "chatapp-be540.appspot.com",
-      messagingSenderId: "730527810133"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script>
-    $(".button").click(function(){
-      if ($('#007')) {
-
-      }
-      firebase.database().ref('users/' + new Date()).set(
-      {
-        chat: ($("#007").val())
-      }
-    );
+  $(function() {
+    $("#txt").on("click", function () {
+      TextAreaEmpty();
     });
-  </script>
-  <script>
-  firebase.database().ref('users').on('value' , (snapshot) => {
-    console.log($("#007").val().length > 4)
-    if ($("#007").val().length > 4) {
-      $(".editTextChat").append("<b>Anonymous:");
-      $(".editTextChat").append("<br>");
-      $(".editTextChat").append(snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 1]].chat);
-      $(".editTextChat").append("<br>");
-      $(".editTextChat").append("<br>");
+
+    function TextAreaEmpty(){
+      $("#btnSend").text("");
     }
-    else {
-      for(let i = 0 ; i < Object.keys(snapshot.val()).length ;i++){
-      $(".editTextChat").append("<b>Anonymous:");
-      $(".editTextChat").append("<br>");
-      $(".editTextChat").append(snapshot.val()[Object.keys(snapshot.val())[i]].chat);
-      $(".editTextChat").append("<br>");
-      $(".editTextChat").append("<br>");
-      }
-    }
-  })
+
+  });
   </script>
 
 </body>
