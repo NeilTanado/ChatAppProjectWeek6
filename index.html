@@ -5,20 +5,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="editindex.css">
-
-  <script>
-  $(function() {
-    $("#btnSend").on('click', function () {
-      TextAreaEmpty();
-      alert("TEST");
-    });
-
-    function TextAreaEmpty(){
-      $("#txtAreaInput").html('');
-    }
-
-  });
-  </script>
 </head>
 
 <body>
@@ -35,6 +21,17 @@
   <div class="title">
     <button id="btnSend" class='button'>Send</button>
   </div>
+
+  <script>
+    $("#btnSend").on('click', function () {
+      TextAreaEmpty();
+      alert("TEST");
+    });
+
+    function TextAreaEmpty(){
+      $("#txtAreaInput").html('');
+    }
+  </script>
 
 </body>
 
