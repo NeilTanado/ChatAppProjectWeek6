@@ -1,7 +1,24 @@
 <html>
 
 <head>
-  <title> Chatapp </title>
+  <title>Chatapp</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="editindex.css">
+
+  <script>
+  $(function() {
+    $("#btnSend").on('click', function () {
+      TextAreaEmpty();
+      alert("TEST");
+    });
+
+    function TextAreaEmpty(){
+      $("#txtAreaInput").html('');
+    }
+
+  });
+  </script>
 </head>
 
 <body>
@@ -12,27 +29,12 @@
     </div>
   </div>
   <div class="chatbox">
-    <textarea id="txt" class='title' rows="8" cols="65">
+    <textarea id="txtAreaInput" class='title' rows="8" cols="65">
     </textarea>
   </div>
   <div class="title">
     <button id="btnSend" class='button'>Send</button>
   </div>
-
-  <link rel="stylesheet" type="text/css" href="editindex.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>
-  $(function() {
-    $("#btnSend").on("click", function () {
-      TextAreaEmpty();
-    });
-
-    function TextAreaEmpty(){
-      $("#txt").html('');
-    }
-
-  });
-  </script>
 
 </body>
 
