@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="chatbox">
-    <textarea id = "txt" class='title' rows="8" cols="65">
+    <textarea id="txt" class='title' rows="8" cols="65">
     </textarea>
   </div>
   <div class="title">
@@ -23,12 +23,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>
   $(function() {
-    $("#txt").on("click", function () {
+    $("#btnSend").on("click", function () {
       TextAreaEmpty();
     });
 
     function TextAreaEmpty(){
-      $("#btnSend").text("");
+      $("#txt").text("");
     }
 
   });
